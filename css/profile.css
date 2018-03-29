@@ -2,9 +2,11 @@
 .green-dark{
   background-color: #00afaa;
 }
+.text-green{
+  color:#00afaa;
+}
 .btn-green{
   background-color: #00afaa;
-  color:white;
 }
 .btn-green:hover{
   background-color: #48dad0;
@@ -23,7 +25,6 @@
   background: rgb(123, 238, 228);
   padding: 0.6em;
   height: 100px;
-
 }
 .titles{
   display: inline-block;
@@ -35,8 +36,6 @@
     height: 91vh;
   }
   .photo-colour{
-    background: rgb(123, 238, 228);
-    padding: 0.6em;
     height: 250px;
   }
 }
