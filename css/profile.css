@@ -6,6 +6,10 @@
   background-color: #00afaa;
   color:white;
 }
+.btn-green:hover{
+  background-color: #48dad0;
+  color:white;
+}
 .img-container {
   background-image: url('../assets/images/peru.jpg');
   background-position: center center;
@@ -18,7 +22,8 @@
 .photo-colour{
   background: rgb(123, 238, 228);
   padding: 0.6em;
-  width: 25%;
+  height: 100px;
+
 }
 .titles{
   display: inline-block;
@@ -26,14 +31,12 @@
 }
 /* vista Desktop*/
 @media only screen and (min-width: 992px) {
-  .figure{
-    margin:2em 0 2em 8em;  
-  }
-  .mt-7{
-    margin:3em auto;
-  }
   .hcolor-img{
-    height: 90vh;
-    color: rgb(24, 23, 23);
+    height: 91vh;
+  }
+  .photo-colour{
+    background: rgb(123, 238, 228);
+    padding: 0.6em;
+    height: 250px;
   }
 }
