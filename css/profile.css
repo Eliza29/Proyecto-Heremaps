@@ -8,18 +8,22 @@
 .btn-green{
   background-color: #00afaa;
 }
-.btn-green:hover{
+a:hover{
+  color:#48dad0;
+}
+.btn-green:hover, .nav-link:hover{
   background-color: #48dad0;
   color:white;
 }
+
 .img-container {
-  background-image: url('../assets/images/peru.jpg');
+  background-image: url('../assets/images/pexels-photo2.jpeg');
   background-position: center center;
+  background-size:cover;
   width: 100%;
 }
 .hcolor-img{
   height: auto;
-  color: rgb(248, 244, 244);
 }
 .photo-colour{
   background: rgb(123, 238, 228);
