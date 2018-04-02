@@ -1,17 +1,26 @@
-/* Estilos de ruta*/
+/* Estilos de ruta */
 .green-dark{
   background-color: #00afaa;
 }
+
 .text-green{
   color:#00afaa;
 }
+
 .btn-green{
   background-color: #00afaa;
 }
+
 a:hover{
   color:#48dad0;
 }
+
 .btn-green:hover, .nav-link:hover{
   background-color: #48dad0;
   color:white;
+}
+
+#mapContainer {
+  background-color: aqua;
+  height: 25rem;
 }
