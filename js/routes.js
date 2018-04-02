@@ -1,21 +1,9 @@
 var platform = new H.service.Platform({
-  'app_id': 'esgpefgkDV0uRo2GWinI',
-  'app_code': 'Qcq4vKeZx9k1cI-8kJyglw',
+  app_id: 'esgpefgkDV0uRo2GWinI',
+  app_code: 'Qcq4vKeZx9k1cI-8kJyglw',
   useCIT: true,
   useHTTPS: true
   });
-
-// Mapa por defecto
-// var defaultLayers = platform.createDefaultLayers();
-// var map = new H.Map(
-// document.getElementById('mapContainer'),
-// defaultLayers.normal.map,
-// {
-// zoom: 10,
-// center: { lat: 52.5, lng: 13.4 }
-// });
-
-// Routing
 
 // Retrieve the target element for the map:
 var targetElement = document.getElementById('mapContainer');
@@ -37,9 +25,9 @@ var routingParameters = {
 // The routing mode:
 'mode': 'fastest;car',
 // The start point of the route:
-'waypoint0': 'geo!50.1120423728813,8.68340740740811',
+'waypoint0': 'geo!-12.055512199999999,-76.9680882',
 // The end point of the route:
-'waypoint1': 'geo!52.5309916298853,13.3846220493377',
+'waypoint1': 'geo!-12.099592,-77.018813',
 // To retrieve the shape of the route we choose the route
 // representation mode 'display'
 'representation': 'display'
@@ -106,3 +94,6 @@ router.calculateRoute(routingParameters, onResult,
 function(error) {
 alert(error.message);
 });
+
+// Make the map interactive
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));

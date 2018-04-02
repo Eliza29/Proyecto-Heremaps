@@ -21,6 +21,7 @@ a:hover{
 }
 
 #mapContainer {
-  background-color: aqua;
+  /* background-color: #48dad0; */
   height: 25rem;
+  width: 25rem;
 }
