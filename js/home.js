@@ -1,7 +1,7 @@
 var APPLICATION_ID = 'esgpefgkDV0uRo2GWinI',
 APPLICATION_CODE = 'Qcq4vKeZx9k1cI-8kJyglw';
 
-// mapa 
+// Mapa 
 
 // Initialize the platform object:
 var platform = new H.service.Platform({
@@ -22,8 +22,8 @@ var map = new H.Map(
     zoom: 5,
     center: { lng: -76.0, lat: -10.0 }
   });
-// Try HTML5 geolocation.
 
+// Try HTML5 geolocation
 if (navigator.geolocation) {
   var currentPos = navigator.geolocation.getCurrentPosition(function (position) {
     console.log(position.coords.latitude, position.coords.longitude);
@@ -31,8 +31,6 @@ if (navigator.geolocation) {
       lat: position.coords.latitude,
       lng: position.coords.longitude
     };
-
-    console.log(pos);
 
     map.setCenter(pos);
     map.setZoom(12);
@@ -45,21 +43,19 @@ if (navigator.geolocation) {
       var explore = new H.places.Explore(platform.getPlacesService());
       var params = {
         'cat': 'natural-geographical, leisure-outdoor',
-        'in': position.coords.latitude + ',' + position.coords.longitude + ';r=10000'  // Peru
+        'in': position.coords.latitude + ',' + position.coords.longitude + ';r=1000'  // Peru
       };
       
       explore.request(params, {}, onResult, onError);
     }
-    // para mostrar mapas y tarjetas ver aqui
+    // Para mostrar mapas y tarjetas ver aqui
     explorePlaces(platform);
   });
 } else {
   alert("Posición no disponible");
 }
 
-// places
-
-
+// Places
 function onResult(result) {
   var places = result.results.items;
   console.log(places);
@@ -88,7 +84,7 @@ function openBubble(position, text){
 }
 function addPlacesToMap(places) {
   var group = new  H.map.Group();
-  // add 'tap' event listener, that opens info bubble, to the group
+  // Add 'tap' event listener, that opens info bubble, to the group
   group.addEventListener('tap', function (evt) {
     map.setCenter(evt.target.getPosition());
     openBubble(
@@ -104,9 +100,10 @@ function addPlacesToMap(places) {
 
   map.addObject(group);
 
-  // get geo bounding box for the group and set it to the map
+  // Get geo bounding box for the group and set it to the map
   map.setViewBounds(group.getBounds());
 }
+
 function addPlacesToPanel(places){
 
   var nodeOL = document.createElement('ul'),
@@ -122,7 +119,7 @@ function addPlacesToPanel(places){
         content =  '<strong style="font-size: large;">' + places[i].title  + '</strong>';
         content += '&nbsp;<span style="font-size:smaller">(' +  places[i].category.title + ')</span></br>';
         content +=  places[i].vicinity + '</br>';
-        content += '<strong>distance:</strong>' +  places[i].distance + 'm</br>';
+        content += '<strong>Distancia: </strong>' +  places[i].distance + 'm</br>';
 
       divLabel.innerHTML = content;
       li.appendChild(divLabel);
@@ -132,14 +129,10 @@ function addPlacesToPanel(places){
   placesContainer.appendChild(nodeOL);
 }
 
-
-
 var placesContainer = document.getElementById('panel');
-//Step 3: make the map interactive
+
+// Make the map interactive
 var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
 // Create the default UI components
 var ui = H.ui.UI.createDefault(map, maptypes);
-
-// places
-
