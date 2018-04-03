@@ -12,6 +12,7 @@
   <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-places.js"></script>
   <link rel="stylesheet" href="css/home.css">
   <title>HereMaps</title>
 </head>
@@ -41,19 +42,11 @@
   </nav>
   <main class="container-fluid my-4">
     <div class="row">
-      <section class="col-lg-4 mb-4">
-        <!-- buscador -->
-        <div class="input-group col-lg-12 mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
-              <i class="fas fa-search"></i>
-            </span>
-          </div>
-          <input type="text" class="form-control" placeholder="Explorar" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <!-- tarjetas -->
+      <section class="col-lg-4 mb-4" id="panel">
+        <!-- tarjetas  -->
         <div class="col-lg-12">
-          <div class="card bg-light">
+            <div id="panel" style="width: 200px; "></div>
+          <!-- <div class="card bg-light">
             <div class="card-body">
               <h5 class="card-title">Restaurante</h5>
               <p class="card-text">Dirección</p>
@@ -62,20 +55,22 @@
                 <i class="fas fa-eye fa-lg"></i> Ver ubicación</a>
               <a href="" class="text-green float-right"></a>
             </div>
-          </div>
-        </div>
+          </div> -->
+        </div> 
       </section>
       <!-- mapa -->
       <section class="col-lg-8">
         <div id="map"></div>        
       </section>
     </div>
-  </main>s
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="js/home.js"></script>
+  
 </body>
 
-</html>
+</html> 
+
