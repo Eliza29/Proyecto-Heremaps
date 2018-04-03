@@ -32,6 +32,8 @@ if (navigator.geolocation) {
       lng: position.coords.longitude
     };
 
+    console.log(pos);
+
     map.setCenter(pos);
     map.setZoom(12);
     var icon = new H.map.Icon('assets/images/mimarcador.png');
@@ -43,13 +45,13 @@ if (navigator.geolocation) {
       var explore = new H.places.Explore(platform.getPlacesService());
       var params = {
         'cat': 'natural-geographical, leisure-outdoor',
-        'in': '-3.73165,-73.24078;r=10000'  // Peru
+        'in': position.coords.latitude + ',' + position.coords.longitude + ';r=10000'  // Peru
       };
       
       explore.request(params, {}, onResult, onError);
     }
     // para mostrar mapas y tarjetas ver aqui
-    // explorePlaces(platform);
+    explorePlaces(platform);
   });
 } else {
   alert("Posición no disponible");
